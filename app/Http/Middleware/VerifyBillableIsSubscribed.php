@@ -22,6 +22,8 @@ class VerifyBillableIsSubscribed
      */
     public function handle(Request $request, Closure $next): Response
     {
+        return $next($request);
+
         $tenant = tenant(Organization::class);
 
         // Verifica se o usuario é SuperAdmin e libera entrada sem subscription

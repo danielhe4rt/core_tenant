@@ -46,5 +46,16 @@ return [
         'url'         => env('EVOLUTION_URL'),
         'url_webhook' => env('EVOLUTION_URL_WEBHOOK'),
     ],
+    'kick' => [
+        'base_url'      => env('KICK_BASE_URL', ''),
+        'key'           => env('KICK_API_KEY'),
+        'client_id'     => env('KICK_CLIENT_ID'),
+        'client_secret' => env('KICK_CLIENT_SECRET'),
+        'redirect_uri'  => env('KICK_REDIRECT_URI'),
+        'scopes'        => [
+            'user:read',
+            'events:subscribe',
+        ],
+    ],
 
 ];

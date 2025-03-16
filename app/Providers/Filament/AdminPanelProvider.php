@@ -2,9 +2,7 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Pages\Backup\Backup;
 use App\Http\Middleware\VerifyIsAdmin;
-use Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
 use Filament\Http\Middleware\{Authenticate, AuthenticateSession, DisableBladeIconComponents, DispatchServingFilamentEvent};
 use Filament\Navigation\MenuItem;
 use Filament\Support\Colors\Color;
@@ -15,7 +13,8 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin; // Ensure this class exists in the specified namespace
+
+// Ensure this class exists in the specified namespace
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -48,7 +47,6 @@ class AdminPanelProvider extends PanelProvider
                 'Planos',
                 'Administração',
                 'Sistema',
-
             ])
             ->discoverResources(in: app_path('Filament/Admin/Resources'), for: 'App\\Filament\\Admin\\Resources')
             ->discoverPages(in: app_path('Filament/Admin/Pages'), for: 'App\\Filament\\Admin\\Pages')
@@ -75,16 +73,6 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
 
-            ->plugins([
-                // ...
-                FilamentJobsMonitorPlugin::make(),
-                /*
-                FilamentSpatieLaravelBackupPlugin::make()
-                    ->usingPage(Backup::class)
-                    ->usingPolingInterval('10s') // default value is 4s
-                    ->usingQueue('default') // default value is null
-                    ->timeout(120) // default value is 120s
-                    */
-            ]);
+            ->plugins([]);
     }
 }

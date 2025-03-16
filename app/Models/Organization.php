@@ -13,6 +13,8 @@ class Organization extends Model
     use Billable;
 
     protected $fillable = [
+        'provider',
+        'provider_id',
         'name',
         'document_number',
         'stripe_id',

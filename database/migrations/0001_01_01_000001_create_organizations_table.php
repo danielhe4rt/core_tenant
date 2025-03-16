@@ -13,11 +13,10 @@ return new class () extends Migration {
     {
         Schema::create('organizations', function (Blueprint $table) {
             $table->id();
+            $table->string('provider');
+            $table->string('provider_id');
             $table->string('stripe_id')->nullable()->index();
             $table->string('name');
-            $table->string('document_number')->unique();
-            $table->string('email')->unique();
-            $table->string('phone')->nullable();
             $table->string('slug')->unique();
             $table->boolean('is_active')->default(true);
             $table->string('pm_type')->nullable();

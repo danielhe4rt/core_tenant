@@ -17,7 +17,7 @@ services:
     build:
       context: .
       args:
-        user: ${USER:-wallace}
+        user: ${USER:-danielhe4rt}
         uid: ${UID:-1000}
       dockerfile: Dockerfile
     working_dir: /var/www/
@@ -35,7 +35,7 @@ services:
     build:
       context: .
       args:
-        user: ${USER:-wallace}
+        user: ${USER:-danielhe4rt}
         uid: ${UID:-1000}
       dockerfile: Dockerfile
     restart: always

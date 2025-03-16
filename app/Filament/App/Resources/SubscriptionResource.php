@@ -14,7 +14,6 @@ use Filament\Resources\Resource;
 use Filament\Tables\Actions\{Action, ActionGroup};
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use IbrahimBougaoua\FilamentRatingStar\Forms\Components\RatingStar;
 
 class SubscriptionResource extends Resource
 {
@@ -134,14 +133,6 @@ class SubscriptionResource extends Resource
                                     Textarea::make('coments')
                                         ->label('Comentário ou Feedback')
                                         ->rows(4)
-                                        ->columnSpan('full'),
-                                ])->columns(1),
-
-                            Fieldset::make('Sua Nota')
-                                ->schema([
-                                    RatingStar::make('rating')
-                                        ->label('Avaliação')
-                                        ->required()
                                         ->columnSpan('full'),
                                 ])->columns(1),
 
